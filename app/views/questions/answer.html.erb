@@ -1,10 +1,21 @@
-<h1> Stupid Coaching </h1>
+<div class="container">
+  <h1>Stupid Coaching</h1>
 
-<p><%= @input%></p>
-<p>-You</p>
-<br>
-<p><%= @answer%></p>
-<p>-Coach</p>
-<br>
-<br>
-<%= link_to "Ask another question", ask_path%>
+  <blockquote>
+    <p>
+      <% if @question.blank? %>
+        😶
+      <% else %>
+        <%= @question %>
+      <% end %>
+    </p>
+    <cite>You</cite>
+  </blockquote>
+
+  <blockquote class="coach">
+    <p><%= @answer %></p>
+    <cite>Your coach</cite>
+  </blockquote>
+
+  <%= link_to "Ask a new question", ask_path %>
+</div>
